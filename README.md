@@ -18,8 +18,8 @@
 
 **基于3x-ui进行的汉化，可以直接进行替换**
 
-- [3X-UI 原版](https://github.com/MHSanaei/3x-ui)
-
+- [3X-UI 原版](https://github.com/MHSanaei/3x-ui){:target="_blank"}
+  
 ## 安装 & 升级
 
 ```
