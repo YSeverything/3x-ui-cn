@@ -756,3 +756,7 @@ install_x-ui() {
 │  ${blue}x-ui uninstall${plain}    - 卸载                        │
 └───────────────────────────────────────────────────────┘"
 }
+
+echo -e "${green}Running...${plain}"
+install_base
+install_x-ui $1
