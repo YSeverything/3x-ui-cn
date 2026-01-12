@@ -150,7 +150,7 @@ legacy_version() {
         exit 1
     fi
     # Use the entered panel version in the download link
-    install_command="bash <(curl -Ls "https://raw.githubusercontent.com/mhsanaei/3x-ui/v$tag_version/install.sh") v$tag_version"
+    install_command="bash <(curl -Ls "https://raw.githubusercontent.com/YSeverything/3x-ui-cn/v$tag_version/install.sh") v$tag_version"
 
     echo "正在下载并安装面板版本 $tag_version..."
     eval $install_command
@@ -189,7 +189,7 @@ uninstall() {
     echo ""
     echo -e "卸载成功。\n"
     echo "如需再次安装面板，可使用以下命令："
-    echo -e "${green}bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)${plain}"
+    echo -e "${green}bash <(curl -Ls https://raw.githubusercontent.com/YSeverything/3x-ui-cn/main/install.sh)${plain}"
     echo ""
     # Trap the SIGTERM signal
     trap delete_script SIGTERM
