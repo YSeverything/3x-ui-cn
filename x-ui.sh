@@ -2152,7 +2152,7 @@ show_usage() {
 show_menu() {
     echo -e "
 ╔────────────────────────────────────────────────╗
-│   ${green}3X-UI 面板管理脚本${plain}                        │
+│   ${green}3X-UI 面板管理脚本${plain}                       │
 │   ${green}0.${plain} 退出脚本                              │
 │────────────────────────────────────────────────│
 │   ${green}1.${plain} 安装面板                              │
@@ -2162,7 +2162,7 @@ show_menu() {
 │   ${green}5.${plain} 卸载面板                              │
 │────────────────────────────────────────────────│
 │   ${green}6.${plain} 重置用户名和密码                      │
-│   ${green}7.${plain} 重置 Web Base Path                   │
+│   ${green}7.${plain} 重置 Web Base Path                    │
 │   ${green}8.${plain} 重置所有设置                          │
 │   ${green}9.${plain} 修改端口                              │
 │  ${green}10.${plain} 查看当前配置                          │
