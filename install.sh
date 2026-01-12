@@ -575,17 +575,17 @@ install_x-ui() {
     
     # 下载资源
     if [ $# == 0 ]; then
-        tag_version=$(curl -Ls "https://api.github.com/repos/MHSanaei/3x-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        tag_version=$(curl -Ls "https://api.github.com/repos/YSeverything/3x-ui-cn/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$tag_version" ]]; then
             echo -e "${yellow}尝试使用 IPv4 获取版本...${plain}"
-            tag_version=$(curl -4 -Ls "https://api.github.com/repos/MHSanaei/3x-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+            tag_version=$(curl -4 -Ls "https://api.github.com/repos/YSeverything/3x-ui-cn/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
             if [[ ! -n "$tag_version" ]]; then
                 echo -e "${red}获取 x-ui 版本失败，可能是 GitHub API 限制，稍后再试${plain}"
                 exit 1
             fi
         fi
         echo -e "获取到 x-ui 最新版本：${tag_version}，开始安装..."
-        curl -4fLRo ${xui_folder}-linux-$(arch).tar.gz -z ${xui_folder}-linux-$(arch).tar.gz https://github.com/MHSanaei/3x-ui/releases/download/${tag_version}/x-ui-linux-$(arch).tar.gz
+        curl -4fLRo ${xui_folder}-linux-$(arch).tar.gz -z ${xui_folder}-linux-$(arch).tar.gz https://github.com/YSeverything/3x-ui-cn/releases/download/${tag_version}/x-ui-linux-$(arch).tar.gz
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui 失败，请确保服务器能访问 GitHub ${plain}"
             exit 1
@@ -600,7 +600,7 @@ install_x-ui() {
             exit 1
         fi
         
-        url="https://github.com/MHSanaei/3x-ui/releases/download/${tag_version}/x-ui-linux-$(arch).tar.gz"
+        url="https://github.com/YSeverything/3x-ui-cn/releases/download/${tag_version}/x-ui-linux-$(arch).tar.gz"
         echo -e "开始安装 x-ui $1"
         curl -4fLRo ${xui_folder}-linux-$(arch).tar.gz -z ${xui_folder}-linux-$(arch).tar.gz ${url}
         if [[ $? -ne 0 ]]; then
@@ -660,7 +660,7 @@ install_x-ui() {
     fi
     
     if [[ $release == "alpine" ]]; then
-        curl -4fLRo /etc/init.d/x-ui https://raw.githubusercontent.com/MHSanaei/3x-ui/main/x-ui.rc
+        curl -4fLRo /etc/init.d/x-ui https://raw.githubusercontent.com/YSeverything/3x-ui-cn/main/x-ui.rc
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 x-ui.rc 失败${plain}"
             exit 1
@@ -708,10 +708,10 @@ install_x-ui() {
             echo -e "${yellow}在 tar.gz 中未找到服务文件，正在从 GitHub 下载...${plain}"
             case "${release}" in
                 ubuntu | debian | armbian)
-                    curl -4fLRo ${xui_service}/x-ui.service https://raw.githubusercontent.com/MHSanaei/3x-ui/main/x-ui.service.debian >/dev/null 2>&1
+                    curl -4fLRo ${xui_service}/x-ui.service https://raw.githubusercontent.com/YSeverything/3x-ui-cn/main/x-ui.service.debian >/dev/null 2>&1
                 ;;
                 *)
-                    curl -4fLRo ${xui_service}/x-ui.service https://raw.githubusercontent.com/MHSanaei/3x-ui/main/x-ui.service.rhel >/dev/null 2>&1
+                    curl -4fLRo ${xui_service}/x-ui.service https://raw.githubusercontent.com/YSeverything/3x-ui-cn/main/x-ui.service.rhel >/dev/null 2>&1
                 ;;
             esac
             
