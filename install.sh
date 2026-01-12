@@ -608,7 +608,7 @@ install_x-ui() {
             exit 1
         fi
     fi
-    curl -4fLRo /usr/bin/x-ui-temp https://raw.githubusercontent.com/YSeverything/3x-ui-cnmain/x-ui.sh
+    curl -4fLRo /usr/bin/x-ui-temp https://raw.githubusercontent.com/YSeverything/3x-ui-cn/main/x-ui.sh
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载 x-ui.sh 失败${plain}"
         exit 1
